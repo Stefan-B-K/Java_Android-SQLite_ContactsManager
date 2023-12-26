@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">SQLite_ContactManager</string>
+    <string name="contact_name">Contact name</string>
+    <string name="contact_phone_number">Contact Phone Number</string>
 </resources>

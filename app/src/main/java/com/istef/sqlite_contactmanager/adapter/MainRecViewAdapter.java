@@ -1,7 +1,7 @@
 package com.istef.sqlite_contactmanager.adapter;
 
-import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,6 +10,7 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.istef.sqlite_contactmanager.ContactDetailsActivity;
 import com.istef.sqlite_contactmanager.R;
 import com.istef.sqlite_contactmanager.model.Contact;
 
@@ -49,7 +50,7 @@ public class MainRecViewAdapter extends RecyclerView.Adapter<MainRecViewAdapter.
         return contactList.size();
     }
 
-    public static class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder {
         public TextView contactName;
         public TextView contactPhone;
 
@@ -59,6 +60,17 @@ public class MainRecViewAdapter extends RecyclerView.Adapter<MainRecViewAdapter.
             contactName = itemView.findViewById(R.id.txtName);
             contactPhone = itemView.findViewById(R.id.txtPhone);
 
+            itemView.setOnClickListener(v -> {                  // or contactName.setOnClickListener
+                int position = getAdapterPosition();
+                Contact contact = contactList.get(position);
+
+                Intent intent = new Intent(context, ContactDetailsActivity.class);
+                intent.putExtra("name", contact.getName());
+                intent.putExtra("phone", contact.getPhoneNumber());
+                context.startActivity(intent);
+            });
+
         }
+
     }
 }

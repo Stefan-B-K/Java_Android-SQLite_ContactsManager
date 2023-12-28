@@ -3,15 +3,19 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_marginTop="4dp">
 
     <androidx.cardview.widget.CardView
-        android:layout_width="0dp"
+        android:layout_width="350dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
+        android:layout_marginTop="2dp"
         android:layout_marginEnd="8dp"
-        android:layout_marginBottom="8dp"
+        android:layout_marginBottom="2dp"
+        android:background="@color/design_default_color_secondary"
+        app:cardCornerRadius="12dp"
+        app:cardElevation="12dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -20,23 +24,30 @@
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@color/design_default_color_secondary"
             android:padding="14dp">
 
             <TextView
                 android:id="@+id/txtName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
                 android:padding="8dp"
                 android:text="@string/contact_name"
-                android:textSize="16sp" />
+                android:textSize="24sp"
+                android:textStyle="bold" />
 
             <TextView
                 android:id="@+id/txtPhone"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/txtName"
+                android:fontFamily="monospace"
                 android:padding="8dp"
-                android:text="@string/contact_phone_number" />
+                android:text="@string/contact_phone_number"
+                android:textAlignment="viewStart"
+                android:textSize="20sp"
+                android:textStyle="bold" />
 
             <ImageView
                 android:id="@+id/imgAvatar"
@@ -44,7 +55,7 @@
                 android:layout_height="70dp"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="10dp"
-                tools:srcCompat="@tools:sample/avatars" />
+                app:srcCompat="@android:drawable/sym_def_app_icon" />
         </RelativeLayout>
     </androidx.cardview.widget.CardView>
 </androidx.constraintlayout.widget.ConstraintLayout>
